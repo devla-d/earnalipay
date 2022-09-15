@@ -95,9 +95,9 @@ export default {
     // props: {
     //   msg: String
     // }
-    mounted() {
-        console.log(window.innerWidth)
-    }
+    // mounted() {
+    //     console.log(window.innerWidth)
+    // }
 };
 </script>
 
