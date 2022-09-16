@@ -24,7 +24,7 @@
       <span id="country-name">Algeria</span> just
       <span id="payment-action">Deposit</span> <span id="full-amount">900</span>
     </div>
-    
+
   </div>
 </template>
 
@@ -39,6 +39,8 @@ export default {
     return {
       isLoading: false,
       initiatedPopup: false,
+      popInterval: null,
+      dateInterval: null,
     };
   },
   mounted() {
@@ -48,6 +50,13 @@ export default {
     tidioscript.setAttribute('async', '')
     document.head.appendChild(tidioscript)
   },
+  unmounted() {
+    clearInterval(this.popInterval)
+    clearInterval(this.dateInterval)
+
+
+
+  },
   components: {
     HomeNavbar,
     HomeFooter,
@@ -56,7 +65,7 @@ export default {
   methods: {
     showRandpop() {
       //console.log(mYcountries);
-      setInterval(function () {
+      this.dateInterval = setInterval(function () {
         var paymentActions = ["Invested", "Withdrew", "Deposit"];
         var amount = Math.floor(Math.random() * (2000 - 50 + 1)) + 50;
 
@@ -75,7 +84,7 @@ export default {
         this.initiatedPopup = true;
       }, 5000);
 
-      setInterval(function () {
+      this.popInterval = setInterval(function () {
         window.$(".popup").fadeToggle(5000);
       }, 5000);
     },
@@ -86,6 +95,7 @@ export default {
 
 <style >
 @import "@/assets/home.css";
+
 /* Popup container - can be anything you want */
 .popup {
   display: block;
@@ -139,17 +149,19 @@ export default {
   -webkit-animation: fadeIn 1s;
   animation: fadeIn 1s;
 }
+
 .uk-card-default {
   background: #f2f3f5;
   color: #666;
   border: 1px solid #e8e8e8;
 }
 
-.uk-breadcrumb > :last-child > a:not([href]),
-.uk-breadcrumb > :last-child > span {
+.uk-breadcrumb> :last-child>a:not([href]),
+.uk-breadcrumb> :last-child>span {
   color: #fd6a4f;
 }
-.uk-breadcrumb > :nth-child(n + 2):not(.uk-first-column)::before {
+
+.uk-breadcrumb> :nth-child(n + 2):not(.uk-first-column)::before {
   content: "›";
   display: inline-block;
   margin: 0 20px;
@@ -167,6 +179,7 @@ export default {
 .uk-section-muted {
   background: #e9e8f0;
 }
+
 main .uk-slideshow-items {
   min-height: 542px !important;
 }
@@ -254,6 +267,7 @@ main .uk-slideshow-items {
   .in-slideshow .uk-slidenav {
     display: none;
   }
+
   main .uk-slideshow-items {
     min-height: 345px !important;
   }
@@ -273,12 +287,10 @@ main .uk-slideshow-items {
   .in-slideshow .uk-slideshow-items p {
     margin-top: 13px;
   }
-  span#date-bar {
-         font-size: 13px;
-         font-weight: 500;
-     }
-}
 
-  
- 
+  span#date-bar {
+    font-size: 13px;
+    font-weight: 500;
+  }
+}
 </style>
