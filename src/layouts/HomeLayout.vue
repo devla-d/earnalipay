@@ -41,18 +41,20 @@ export default {
       initiatedPopup: false,
       popInterval: null,
       dateInterval: null,
+
     };
   },
   mounted() {
     this.showRandpop();
-    let tidioscript = document.createElement('script')
-    tidioscript.setAttribute('src', '//code.tidio.co/4xoyo9fhuf9katplsgp00346p9zcmha7.js')
-    tidioscript.setAttribute('async', '')
-    document.head.appendChild(tidioscript)
+    let tidioScript = document.createElement('script')
+    tidioScript.setAttribute('src', '//code.tidio.co/4xoyo9fhuf9katplsgp00346p9zcmha7.js')
+    tidioScript.setAttribute('async', '')
+    document.head.appendChild(tidioScript)
   },
   unmounted() {
     clearInterval(this.popInterval)
     clearInterval(this.dateInterval)
+
 
 
 
