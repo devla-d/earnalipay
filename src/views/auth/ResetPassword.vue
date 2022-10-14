@@ -106,19 +106,22 @@ export default {
         document.title = "Reset Password";
         const uid = this.$route.query.uid
         const token = this.$route.query.token
-        if (!uid && !token) console.log("No key") //this.$router.push("/login");
-        window.$.get(`https://earnalipay.com/reset-password/?uid=${uid}&token=${token}`, (data) => {
-            if (!data.error) {
+        if (!uid && !token) {
+            toastr.warning(`Link is invalid`);
+            this.$router.push("/login")
+        } else {
+            window.$.get(`https://earnalipay.com/reset-password/?uid=${uid}&token=${token}`, (data) => {
+                if (!data.error) {
 
-                this.user = data.user
-            } else {
-                toastr.warning(`Link is invalid`);
-                //this.$router.push("/login");
+                    this.user = data.user
+                } else {
+                    toastr.warning(`Link is invalid`);
+                    this.$router.push("/login");
 
-            }
-        })
-        this.loading = false
-
+                }
+            })
+            this.loading = false
+        }
 
 
 
@@ -133,7 +136,7 @@ export default {
                     if (!data.error) {
 
                         toastr.success(`Password changed successful you can now login`);
-                        //this.$router.push("/login");
+                        this.$router.push("/login");
                     } else {
                         toastr.warning(`SOMETHING WENT WRONG`);
 
