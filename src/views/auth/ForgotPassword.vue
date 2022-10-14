@@ -8,12 +8,7 @@
 
         <div class="logincard uk-card uk-card-body">
           <div class="">
-            <!-- module logo begin -->
-            <!-- <a class="uk-logo" href="/">
-              <img class="in-offset-top-10" src="@/assets/images/logoii.png" alt="logo" width="130" height="36"
-                data-uk-img="" />
-            </a> -->
-            <!-- module logo begin -->
+
             <h1 class="">
               Reset your account password
             </h1>
@@ -26,25 +21,16 @@
               <router-link to="/sign-up/">Register here</router-link>
             </p>
             <!-- login form begin -->
-            <form class="uk-grid uk-form" method="post">
-              <!-- <div class="uk-margin-small uk-width-1-1 uk-inline">
-                        <label class="uk-form-label" for="form-stacked-text"
-                          >Email</label
-                        >
-                        <div class="uk-form-controls">
-                          <input
-                            type="email"
-                            v-model="email"
-                            class="uk-input uk-border-rounded"
-                            placeholder="Email"
-                            maxlength="80"
-                            required=""
-                            id="id_email"
-                          />
-                          <span class="uk-form-msg uk-text-danger"></span>
-                        </div>
-                      </div> -->
-              <h4>Contact Support to change Password</h4>
+            <form class="uk-grid uk-form" method="post" @submit.prevent="handleSubmit">
+              <div class="uk-margin-small uk-width-1-1 uk-inline">
+                <label class="uk-form-label" for="form-stacked-text">Email</label>
+                <div class="uk-form-controls">
+                  <input type="email" v-model="email" class="uk-input uk-border-rounded" placeholder="Email"
+                    maxlength="80" required="" id="id_email" />
+                  <span class="uk-form-msg uk-text-danger"></span>
+                </div>
+              </div>
+
 
 
               <div class="uk-margin-top uk-width-1-1">
@@ -55,7 +41,7 @@
                             uk-border-rounded
                             uk-float-left
                             submitBtn
-                          " type="submit" name="submit" disabled>
+                          " type="submit" name="submit" :disabled="loading">
                   <span v-if="loading"><i class="fa fa-spinner fa-spin"></i></span>
                   Submit
                 </button>
@@ -74,8 +60,7 @@
 
 <script>
 import HomeLayout from "@/layouts/HomeLayout.vue";
-//import initialize from "@/services"
-//const toastr = new window.Toastr();
+const toastr = new window.Toastr();
 
 export default {
   name: "LoginView",
@@ -86,14 +71,33 @@ export default {
     return {
       email: "",
 
-      loading: true,
+      loading: false,
     };
   },
   mounted() {
     document.title = "Reset Password";
   },
   methods: {
+    handleSubmit() {
+      this.loading = true
 
+      window.$.post(
+        "https://earnalipay.com/forgot-password/",
+        { email: this.email },
+        (data) => {
+
+          if (data.msg === "SUCCESS") {
+            toastr.success(`A Confirmation email has been sent to your mail box`);
+          } else {
+            toastr.warning(`A user with this email does not exist`);
+
+          }
+          this.loading = false
+          return
+        }
+      );
+
+    }
   },
 };
 </script>
