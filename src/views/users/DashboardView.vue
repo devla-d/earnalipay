@@ -36,18 +36,12 @@
         <div>
           <div class="spend-box">
             <div class="">
-              <div
-                class="uk-card uk-box-shadow-small uk-card-hover uk-card-body"
-              >
+              <div class="uk-card uk-box-shadow-small uk-card-hover uk-card-body">
                 <h3 class="uk-card-title">Spending</h3>
 
                 <div class="in-box">
                   <div class="chbox uk-text-center">
-                    <img
-                      src="@/assets/images/spritei.png"
-                      alt=""
-                      class="barpng"
-                    />
+                    <img src="@/assets/images/spritei.png" alt="" class="barpng" />
                   </div>
                   <div>
                     <ul>
@@ -59,50 +53,32 @@
                         <h5>Total Withdraw</h5>
                         <p><strong>$</strong>{{ user.total_withdraw }}</p>
                       </li>
-                     
+
                     </ul>
                   </div>
                 </div>
               </div>
             </div>
             <div class="io-investbox">
-              <div
-                class="uk-card uk-box-shadow-small uk-card-hover uk-card-body"
-              >
+              <div class="uk-card uk-box-shadow-small uk-card-hover uk-card-body">
                 <div class="io-investinfo">
                   <div id="timerblock">
                     <div class="base-timer">
-                      <svg
-                        class="base-timer__svg"
-                        viewBox="0 0 100 100"
-                        xmlns="http://www.w3.org/2000/svg"
-                      >
+                      <svg class="base-timer__svg" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg">
                         <g class="base-timer__circle">
-                          <circle
-                            class="base-timer__path-elapsed"
-                            cx="50"
-                            cy="50"
-                            r="45"
-                          ></circle>
-                          <path
-                            id="base-timer-path-remaining"
-                            stroke-dasharray="283"
-                            :class="[
-                              'base-timer__path-remaining',
-                              remainingPathColor,
-                            ]"
-                            d="
+                          <circle class="base-timer__path-elapsed" cx="50" cy="50" r="45"></circle>
+                          <path id="base-timer-path-remaining" stroke-dasharray="283" :class="[
+                            'base-timer__path-remaining',
+                            remainingPathColor,
+                          ]" d="
                         M 50, 50
                         m -45, 0
                         a 45,45 0 1,0 90,0
                         a 45,45 0 1,0 -90,0
-                      "
-                          ></path>
+                      "></path>
                         </g>
                       </svg>
-                      <span id="base-timer-label" class="base-timer__label"
-                        >formatTime( timeLeft )</span
-                      >
+                      <span id="base-timer-label" class="base-timer__label">formatTime( timeLeft )</span>
                     </div>
                   </div>
                   <div class="tip-balance">
@@ -127,13 +103,13 @@
                         <h4>No current Investment</h4>
                       </li>
 
-                      <li>
+                      <!-- <li>
                         <router-link
                           to="/create-investment/"
                           class="uk-button uk-button-primary btn-red mt-2"
                           >Invest</router-link
                         >
-                      </li>
+                      </li> -->
                     </ul>
                     <ul v-else>
                       <li>
@@ -150,24 +126,22 @@
                       </li>
                       <li>
                         <h4>Status :</h4>
-                        <p
-                          :class="[
-                            invest.status == 'active'
-                              ? 'uk-text-success'
-                              : 'uk-text-warning',
-                          ]"
-                        >
+                        <p :class="[
+                          invest.status == 'active'
+                            ? 'uk-text-success'
+                            : 'uk-text-warning',
+                        ]">
                           {{ invest.status }}
                         </p>
                       </li>
 
-                      <li v-if="invest.status === 'completed'">
+                      <!-- <li v-if="invest.status === 'completed'">
                         <router-link
                           to="/create-investment/"
                           class="uk-button uk-button-primary btn-red mt-2"
                           >Invest</router-link
                         >
-                      </li>
+                      </li> -->
                     </ul>
                   </div>
                 </div>
@@ -238,7 +212,7 @@ export default {
 
       this.invest = data.invest;
       var now = new Date().getTime();
-     
+
       if (this.invest != null && this.invest.status == "active") {
         var end_date = Date.parse(data.invest.end_date);
         var distance = end_date - now;
@@ -350,6 +324,7 @@ export default {
 .barpng {
   width: 113px;
 }
+
 .base-timer {
   position: relative;
   width: 230px;
@@ -415,6 +390,7 @@ export default {
   width: 100%;
   flex-direction: column;
 }
+
 .in-box ul {
   margin: 0;
   padding: 0;
@@ -424,9 +400,11 @@ export default {
   text-align: center;
   padding: 11px;
 }
+
 .in-box ul li h5 {
   margin-bottom: 5px;
 }
+
 .in-box ul li p {
   margin: 0;
 }
@@ -439,15 +417,18 @@ export default {
 .balance-box {
   background-image: url("@/assets/images/in-profit-decor-3.svg");
 }
+
 .uk-grid-medium {
   margin: 0 !important;
 }
+
 .spend-box {
   display: flex;
   width: 100%;
   align-items: center;
 }
-.spend-box > div {
+
+.spend-box>div {
   width: 40%;
 }
 
@@ -456,6 +437,7 @@ export default {
 
   margin-left: 10px;
 }
+
 .chbox {
   width: 100%;
   margin-bottom: 15px;
@@ -492,15 +474,18 @@ export default {
   .spend-box {
     flex-direction: column;
   }
-  .spend-box > div {
+
+  .spend-box>div {
     width: 100%;
   }
+
   .spend-box div.io-investbox {
     width: 100%;
 
     margin-left: 0;
     margin-top: 10px;
   }
+
   .base-timer {
     width: 112px;
     height: 111px;
