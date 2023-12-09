@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="description" content="We make sure our speculators assets are properly utilized to ensure profitable returns.">
+    <meta name="keywords" content="Invest, Bitcoin, Trade, Forex, MT5, Broker">
+    <meta name="author" content="sammy">
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
+    <meta name="theme-color" content="#e9e8f0" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <!-- <meta name="viewport" content="width=device-width,initial-scale=1.0"> -->
+
+
+    <!-- Favicon and apple icon -->
+    <link rel="shortcut icon" href="<%= BASE_URL %>static/fav.png" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="<%= BASE_URL %>static/fav.png">
+    <link rel="stylesheet" href="<%= BASE_URL %>static/fontawesome/css/all.css">
+
+
+    <style>
+        body {
+            top: 0 !important;
+        }
+        
+        body .skiptranslate {
+            display: none !important;
+        }
+        
+        .goog-te-spinner-pos {
+            display: none !important;
+        }
+    </style>
+
+
+
+
+    <title>
+        Earnalipay
+    </title>
+
+</head>
+
+<body>
+    <noscript>
+      <strong>We're sorry but Earnalipay doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+    </noscript>
+    <div id="app"></div>
+    <!-- built files will be auto injected -->
+    <script type="text/javascript" src="<%= BASE_URL %>static/jquery.js"></script>
+    <div id="google_translate_element" style="display:none"></div>
+    <script type="text/javascript">
+        function readCookie(name) {
+            var c = document.cookie.split('; '),
+                cookies = {},
+                i, C;
+
+            for (i = c.length - 1; i >= 0; i--) {
+                C = c[i].split('=');
+                cookies[C[0]] = C[1];
+            }
+
+            return cookies[name];
+        }
+        var lang = readCookie('googtrans').slice(-2);
+        $('#language option[value="' + lang + '"]').prop('selected', true);
+
+        function googleTranslateElementInit() {
+            new google.translate.TranslateElement({
+                pageLanguage: "en"
+            }, 'google_translate_element');
+        }
+    </script>
+    <script type="text/javascript" src="<%= BASE_URL %>static/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>
