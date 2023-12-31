@@ -62,7 +62,7 @@
                             uk-border-rounded
                             uk-margin-small-left
                             uk-visible@m
-                          ">Open account</a>
+                          ">Register account</a>
                       </div>
                       <!-- <p class="uk-text-small">
                         <span class="uk-text-primary">*</span>Trading 
@@ -92,7 +92,7 @@
                         Returns From Investment
                       </p>
                       <div class="in-slideshow-button">
-                        <a href="/sign-up" class="uk-button uk-button-primary uk-border-rounded">Open account</a>
+                        <a href="/sign-up" class="uk-button uk-button-primary uk-border-rounded">Register account</a>
                         <a href="/login" class="
                             uk-button
                             uk-button-primary
