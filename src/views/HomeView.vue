@@ -18,14 +18,14 @@
                         guarantees a stable income accrued every calendar day.
                       </p>
                       <div class="in-slideshow-button">
-                        <a href="/login" class="uk-button uk-button-primary uk-border-rounded">Login account</a>
-                        <a href="/sign-up" class="
+                        <a href="/sign-up" class="uk-button uk-button-primary uk-border-rounded">Register</a>
+                        <a href="/login" class="
                             uk-button
                             uk-button-primary
                             uk-border-rounded
                             uk-margin-small-left
                             uk-visible@m
-                          ">Open account</a>
+                          ">Login</a>
                       </div>
                       <!-- <p class="uk-text-small">
                         <span class="uk-text-primary">*</span>Trading 
@@ -92,14 +92,16 @@
                         Returns From Investment
                       </p>
                       <div class="in-slideshow-button">
-                        <a href="/sign-up" class="uk-button uk-button-primary uk-border-rounded">Register account</a>
+                        
+
+                          <a href="/sign-up" class="uk-button uk-button-primary uk-border-rounded">Register</a>
                         <a href="/login" class="
                             uk-button
                             uk-button-primary
                             uk-border-rounded
                             uk-margin-small-left
                             uk-visible@m
-                          ">Login account</a>
+                          ">Login</a>
                       </div>
                       <!-- <p class="uk-text-small">
                         <span class="uk-text-primary">*</span>Trading is highly speculative and carries a high level of

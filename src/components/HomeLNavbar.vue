@@ -51,8 +51,9 @@
             </li>
           </ul>
           <div>
+           
+            <router-link to="/sign-up" class="uk-button uk-button-text">Register</router-link>
             <router-link to="/login" class="uk-button uk-button-text">Login</router-link>
-            <router-link to="/sign-up" class="uk-button uk-button-text">Sign up</router-link>
           </div>
         </div>
         <div class="uk-navbar-item in-mobile-nav uk-hidden@m">
