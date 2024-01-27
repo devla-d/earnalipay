@@ -91,12 +91,12 @@
           </li>
 
           <li>
-            <router-link to="/login" class="nav-link scrollto"><i class="fa fa-sign-in-alt"></i>
-              <span>Sign in</span>
+            <router-link to="/sign-up" class="nav-link scrollto"><i class="fa fa-sign-in-alt"></i>
+              <span>Register</span>
             </router-link>
           </li>
           <li>
-            <router-link to="/sign-up" class="nav-link scrollto"><i class="fa fa-user-plus"></i> <span>Sign Up</span>
+            <router-link to="/login" class="nav-link scrollto"><i class="fa fa-user-plus"></i> <span>Login</span>
             </router-link>
           </li>
         </ul>

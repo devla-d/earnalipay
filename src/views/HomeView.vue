@@ -55,14 +55,14 @@
                         Your Journey To Financial Freedom Start Here
                       </p>
                       <div class="in-slideshow-button">
-                        <a href="/login" class="uk-button uk-button-primary uk-border-rounded">Login account</a>
-                        <a href="/sign-up" class="
+                        <a href="/sign-up" class="uk-button uk-button-primary uk-border-rounded">Register</a>
+                        <a href="/login" class="
                             uk-button
                             uk-button-primary
                             uk-border-rounded
                             uk-margin-small-left
                             uk-visible@m
-                          ">Register account</a>
+                          ">Login</a>
                       </div>
                       <!-- <p class="uk-text-small">
                         <span class="uk-text-primary">*</span>Trading 
@@ -289,7 +289,7 @@
                             </div>
                             <div class="in-package-content">
                               <ul>
-                                <li>Minimum: <span>30 USD</span></li>
+                                <li>Minimum: <span>50 USD</span></li>
                                 <li>maxiimum: <span>499 USD</span></li>
                               </ul>
                             </div>
@@ -338,7 +338,7 @@
                               <div class="left"><span>60%</span></div>
                               <div class="right">
                                 <div class="h3">Master</div>
-                                <div class="pl">After 48 Hours</div>
+                                <div class="pl">After 24 Hours</div>
                               </div>
                             </div>
                             <div class="in-package-content">
@@ -365,7 +365,7 @@
                               <div class="left"><span>80%</span></div>
                               <div class="right">
                                 <div class="h3">Premium</div>
-                                <div class="pl">After 72 Hours</div>
+                                <div class="pl">After 48 Hours</div>
                               </div>
                             </div>
                             <div class="in-package-content">
@@ -392,7 +392,7 @@
                               <div class="left"><span>100%</span></div>
                               <div class="right">
                                 <div class="h3">Ruby</div>
-                                <div class="pl">After 4 days</div>
+                                <div class="pl">After 72 Hours</div>
                               </div>
                             </div>
                             <div class="in-package-content">
@@ -446,13 +446,13 @@
                       </option>
 
                       <option value="4" data-min="1000" data-max="1900" data-perc="60">
-                        60% After 48 Hours
+                        60% After 24 Hours
                       </option>
                       <option value="5" data-min="2000" data-max="2999" data-perc="80">
-                        80% After 72 Hours
+                        80% After 48 Hours
                       </option>
                       <option value="6" data-min="3000" data-max="99999999999" data-perc="100">
-                        100% After 96 Hours
+                        100% After 72 Hours
                       </option>
                     </select>
                   </div>
